@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HousingActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="left">
+
+        <Button
+            android:id="@+id/TopRight"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="32dp"
+            android:background="@android:color/holo_red_light"
+            android:text="Give Information"
+            app:layout_constraintBottom_toTopOf="@+id/BottomRight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/TopLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/TopLeft"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="71dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="32dp"
+            android:background="@android:color/holo_red_light"
+            android:text="Request Information"
+            app:layout_anchor="@+id/Communication"
+            app:layout_anchorGravity="bottom|center"
+            app:layout_constraintBottom_toTopOf="@+id/BottomLeft"
+            app:layout_constraintEnd_toStartOf="@+id/TopRight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/BottomLeft"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginBottom="108dp"
+            android:background="@android:color/holo_red_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/BottomRight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TopRight" />
+
+        <Button
+            android:id="@+id/BottomRight"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="108dp"
+            android:background="@android:color/holo_red_light"
+            android:text="Employment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/BottomLeft"
+            app:layout_constraintTop_toBottomOf="@+id/TopLeft" />
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>
