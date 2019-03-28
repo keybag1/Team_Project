@@ -42,6 +42,26 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/TopRight">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="top|center"
+                android:text="Communication"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+                tools:layout_editor_absoluteX="0dp"
+                tools:text="Communication" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/TopRight"
             style="@style/Widget.AppCompat.Button"
@@ -76,6 +96,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="24dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+            app:layout_constraintEnd_toStartOf="@+id/TopRight"
+            app:srcCompat="@drawable/ic_record_voice_over_black_24dp" />
+
         <Button
             android:id="@+id/BottomLeft"
             android:layout_width="150dp"
@@ -105,6 +137,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BottomLeft"
             app:layout_constraintTop_toBottomOf="@+id/TopLeft" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>

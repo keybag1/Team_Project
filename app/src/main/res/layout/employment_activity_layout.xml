@@ -42,6 +42,40 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/TopRight">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="top|center"
+                android:text="Employment"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+                tools:layout_editor_absoluteX="0dp"
+                tools:text="Employment" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+            app:layout_constraintEnd_toStartOf="@+id/TopRight"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_work_black_24dp" />
+
         <Button
             android:id="@+id/TopRight"
             style="@style/Widget.AppCompat.Button"
@@ -85,7 +119,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="108dp"
             android:background="@android:color/holo_orange_dark"
-            android:text="Inclusion"
+            android:text=" Inclusion Ireland"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/BottomRight"
             app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +139,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BottomLeft"
             app:layout_constraintTop_toBottomOf="@+id/TopLeft" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>

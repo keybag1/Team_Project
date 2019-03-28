@@ -42,6 +42,41 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left">
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/TopRight">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="top|center"
+                android:text="Housing"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+                tools:layout_editor_absoluteX="0dp"
+                tools:text="Housing" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="24dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+            app:layout_constraintEnd_toStartOf="@+id/TopRight"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_home_black_24dp" />
+
         <Button
             android:id="@+id/TopRight"
             style="@style/Widget.AppCompat.Button"
@@ -52,7 +87,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_red_light"
-            android:text="Give Information"
+            android:text="Information"
             app:layout_constraintBottom_toTopOf="@+id/BottomRight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TopLeft"
@@ -99,7 +134,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="108dp"
             android:background="@android:color/holo_red_light"
-            android:text="Employment"
+            android:text="Make Complaint"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BottomLeft"

@@ -41,6 +41,26 @@
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="left">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/TopRight">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="top|center"
+                android:text="Money"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+                tools:layout_editor_absoluteX="0dp"
+                tools:text="Money" />
+        </LinearLayout>
+
         <Button
             android:id="@+id/TopRight"
             style="@style/Widget.AppCompat.Button"
@@ -57,6 +77,18 @@
             app:layout_constraintStart_toEndOf="@+id/TopLeft"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="24dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/TopLeft"
+            app:layout_constraintEnd_toStartOf="@+id/TopRight"
+            app:srcCompat="@drawable/ic_euro_symbol_black_24dp" />
+
         <Button
             android:id="@+id/TopLeft"
             style="@style/Widget.AppCompat.Button"
@@ -67,7 +99,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_green_dark"
-            android:text="IHRC UNCRPD"
+            android:text="Rights"
             app:layout_anchor="@+id/Communication"
             app:layout_anchorGravity="bottom|center"
             app:layout_constraintBottom_toTopOf="@+id/BottomLeft"
