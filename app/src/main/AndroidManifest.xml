@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.knowyourrights">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +26,7 @@
         <activity android:name=".HousingActivity" android:screenOrientation="portrait"/>
         <activity android:name=".CommunicationActivity" android:screenOrientation="portrait"/>
         <activity android:name=".EmploymentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".WebViewActivity"/>
     </application>
 
 </manifest>
