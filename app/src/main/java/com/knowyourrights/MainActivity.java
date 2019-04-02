@@ -2,14 +2,19 @@ package com.knowyourrights;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View.OnLongClickListener;
 import android.widget.Button;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     private Button HousingButton;
     private Button CommunicationButton;
     private Button EmploymentButton;
+    static TextToSpeech tts;
+
+    private String test = "Employability";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS){
+                    int result = tts.setLanguage(Locale.ENGLISH);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("TTS", "Language not supported");
+                    }
+                }else{
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
         //Button for money menu
          MoneyButton = findViewById(R.id.Money);
          MoneyButton.setOnClickListener(new View.OnClickListener() {
@@ -43,12 +67,30 @@ public class MainActivity extends AppCompatActivity {
                  MoneyMenu(mview);
              }
          });
+
+         MoneyButton.setOnLongClickListener(new OnLongClickListener() {
+             @Override
+             public boolean onLongClick(View v) {
+                 tts.setLanguage(Locale.ENGLISH);
+                 tts.speak("Money",TextToSpeech.QUEUE_FLUSH, null, null);
+                 return true;
+             }
+         });
          //Button for Housing Menu
         HousingButton = findViewById(R.id.Housing);
         HousingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View hview) {
                 HousingMenu(hview);
+            }
+        });
+
+        HousingButton.setOnLongClickListener(new OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v) {
+                tts.setLanguage(Locale.ENGLISH);
+                tts.speak("Housing",TextToSpeech.QUEUE_FLUSH, null, null);
+                return true;
             }
         });
 
@@ -61,6 +103,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        CommunicationButton.setOnLongClickListener(new OnLongClickListener(){
+
+            @Override
+            public boolean onLongClick(View v) {
+                speak(test);
+                return true;
+            }
+        });
+
         //Button for Employment Menu
         EmploymentButton = findViewById(R.id.Employment);
         EmploymentButton.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +121,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        EmploymentButton.setOnLongClickListener(new OnLongClickListener(){
+
+            @Override
+            public boolean onLongClick(View v) {
+                speak("Employment");
+                //tts.setLanguage(Locale.ENGLISH);
+                //tts.speak("Employment",TextToSpeech.QUEUE_FLUSH, null, null);
+                return true;
+            }
+        });
+
+    }
+
+    static public void speak(String phrase){
+        tts.speak(phrase, TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
     //Money Menu Activity
