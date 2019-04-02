@@ -71,6 +71,7 @@ public class EmploymentActivity extends AppCompatActivity {
                 MainActivity.speak("Supported Employment");
                 return true;
             }
+
         });
 
         //Inclusion Ireland button
