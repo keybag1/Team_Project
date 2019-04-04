@@ -1,0 +1,8 @@
+<application>
+  <component name="LanguageInjectionConfiguration">
+    <injection language="DTD" injector-id="xml">
+      <display-name>intent-filter</display-name>
+      <place><![CDATA[xmlTag().withLocalName(string().equalTo("intent-filter"))]]></place>
+    </injection>
+  </component>
+</application>
