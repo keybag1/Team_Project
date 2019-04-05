@@ -19,19 +19,13 @@
         layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_vol" />
-
-    <android.support.design.widget.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
         android:layout_margin="@dimen/fab_margin"
+        android:scaleType="center"
+        app:fabSize="normal"
         app:srcCompat="@drawable/ic_back" />
 
 
@@ -87,7 +81,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_red_light"
-            android:text="Information"
+            android:text="Housing Information"
             app:layout_constraintBottom_toTopOf="@+id/BottomRight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TopLeft"
@@ -103,7 +97,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_red_light"
-            android:text="Request Information"
+            android:text="Request Housing Information"
             app:layout_anchor="@+id/Communication"
             app:layout_anchorGravity="bottom|center"
             app:layout_constraintBottom_toTopOf="@+id/BottomLeft"
@@ -134,7 +128,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="108dp"
             android:background="@android:color/holo_red_light"
-            android:text="Make Complaint"
+            android:text="Rights Review Committee"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BottomLeft"

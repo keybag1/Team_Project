@@ -19,16 +19,6 @@ public class CommunicationActivity extends AppCompatActivity {
 
         setContentView(R.layout.communication_activity_layout);
 
-        //Floating action button for TTS
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
 
         //Floating back action back button
         FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton);

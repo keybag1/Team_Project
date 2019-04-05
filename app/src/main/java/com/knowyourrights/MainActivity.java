@@ -18,13 +18,20 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Button Variables
     private Button MoneyButton;
     private Button HousingButton;
     private Button CommunicationButton;
     private Button EmploymentButton;
+
+    //Text to speech Variable
     static TextToSpeech tts;
 
-    private String test = "Employability";
+    //String Variables for Text to Speech
+    private String Communication = "Communication";
+    private String Housing = "Housing";
+    private String Money = "Money";
+    private String Employment = "Employment";
 
 
     @Override
@@ -34,16 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Floating action button for TTS
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
+        // Text to speech Initialisation
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -67,15 +66,15 @@ public class MainActivity extends AppCompatActivity {
                  MoneyMenu(mview);
              }
          });
-
+         //TTS for money Button
          MoneyButton.setOnLongClickListener(new OnLongClickListener() {
              @Override
              public boolean onLongClick(View v) {
-                 tts.setLanguage(Locale.ENGLISH);
-                 tts.speak("Money",TextToSpeech.QUEUE_FLUSH, null, null);
+                 speak(Money);
                  return true;
              }
          });
+
          //Button for Housing Menu
         HousingButton = findViewById(R.id.Housing);
         HousingButton.setOnClickListener(new View.OnClickListener() {
@@ -88,8 +87,7 @@ public class MainActivity extends AppCompatActivity {
         HousingButton.setOnLongClickListener(new OnLongClickListener(){
             @Override
             public boolean onLongClick(View v) {
-                tts.setLanguage(Locale.ENGLISH);
-                tts.speak("Housing",TextToSpeech.QUEUE_FLUSH, null, null);
+                speak(Housing);
                 return true;
             }
         });
@@ -102,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
                 CommunicationMenu(cview);
             }
         });
-
+        //TTS for Communication
         CommunicationButton.setOnLongClickListener(new OnLongClickListener(){
 
             @Override
             public boolean onLongClick(View v) {
-                speak(test);
+                speak(Communication);
                 return true;
             }
         });
@@ -121,34 +119,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //TTS for Employment
         EmploymentButton.setOnLongClickListener(new OnLongClickListener(){
 
             @Override
             public boolean onLongClick(View v) {
-                speak("Employment");
-                //tts.setLanguage(Locale.ENGLISH);
-                //tts.speak("Employment",TextToSpeech.QUEUE_FLUSH, null, null);
+                speak(Employment);
                 return true;
             }
         });
 
     }
 
+    //Speak function for text to speech,
+    //Takes a string and speaks it aloud
     static public void speak(String phrase){
         tts.speak(phrase, TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
-    //Money Menu Activity
+    //Money Menu Activity opens Money Activity
     public void MoneyMenu(View mview) {
         Intent moneyIntent = new Intent(this, MoneyActivity.class);
         startActivity(moneyIntent);
     }
-    //Housing Menu Activity
+    //Housing Menu Activity opens Housing Activity
     public void HousingMenu(View hview) {
         Intent HousingIntent = new Intent(this, HousingActivity.class);
         startActivity(HousingIntent);
     }
-    //Communication Menu Activity
+    //Communication Menu Activity open Communication Activity
     public void CommunicationMenu(View cview) {
         Intent CommunicationIntent = new Intent(this, CommunicationActivity.class);
         startActivity(CommunicationIntent);

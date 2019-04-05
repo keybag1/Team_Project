@@ -16,6 +16,7 @@ public class MoneyActivity extends AppCompatActivity {
     private Button MABsButton;
     private Button RightsButton;
     private Button InclusionIrelandButton;
+    private Button RRC;
 
     //URLS
     private String RightsURL = "https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities.html";
@@ -32,16 +33,6 @@ public class MoneyActivity extends AppCompatActivity {
     //setSupportActionBar(toolbar);
 
     setContentView(R.layout.money_activity_layout);
-
-    //Floating action button for TTS
-    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-    fab.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
-      }
-    });
 
     //Floating back action back button
     FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton);
@@ -61,6 +52,14 @@ public class MoneyActivity extends AppCompatActivity {
           }
       });
 
+      MABsButton.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+              MainActivity.speak("Money and Budgeting Service");
+              return true;
+          }
+      });
+
       //Rights Button
       RightsButton = findViewById(R.id.TopLeft);
       RightsButton.setOnClickListener(new View.OnClickListener() {
@@ -70,12 +69,45 @@ public class MoneyActivity extends AppCompatActivity {
           }
       });
 
+      RightsButton.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+              MainActivity.speak("Money Rights");
+              return true;
+          }
+      });
+
       //Inclusion Ireland Button
       InclusionIrelandButton = findViewById(R.id.TopRight);
       InclusionIrelandButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
               openWebView(v, InclusionIreland );
+          }
+      });
+
+      InclusionIrelandButton.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+              MainActivity.speak("Inclusion Ireland");
+              return true;
+          }
+      });
+
+      //Rights Review Committee Button
+      RightsButton = findViewById(R.id.BottomRight);;
+      RightsButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+
+          }
+      });
+
+      RightsButton.setOnLongClickListener(new View.OnLongClickListener() {
+          @Override
+          public boolean onLongClick(View v) {
+              MainActivity.speak("Rights Review Committee");
+              return true;
           }
       });
 

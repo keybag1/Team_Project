@@ -15,6 +15,7 @@ public class EmploymentActivity extends AppCompatActivity {
     private Button Employability;
     private Button SupportedEmployability;
     private Button InclusionIreland;
+    private Button RRC;
 
     //URL Strings
     private String welfareURL = "https://www.welfare.ie/en/Pages/EmployAbility-Service.aspx";
@@ -26,20 +27,9 @@ public class EmploymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         setContentView(R.layout.employment_activity_layout);
-
-        //Floating action button for TTS
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         //Employability button
         Employability = findViewById(R.id.TopLeft);
@@ -86,6 +76,23 @@ public class EmploymentActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 MainActivity.speak("Inclusion Ireland");
+                return true;
+            }
+        });
+
+        //Rights Review Committee
+        RRC = findViewById(R.id.BottomRight);
+        RRC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        RRC.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                MainActivity.speak("Rights Review Committee");
                 return true;
             }
         });
