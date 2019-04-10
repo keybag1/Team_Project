@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import static com.knowyourrights.MainActivity.speak;
+
 public class HousingActivity extends AppCompatActivity {
 
     //Buttons
@@ -51,7 +53,7 @@ public class HousingActivity extends AppCompatActivity {
         Info_Button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Housing Information");
+                speak("Housing Information");
                 return true;
             }
         });
@@ -68,7 +70,7 @@ public class HousingActivity extends AppCompatActivity {
         RequestInfo_Button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Request Housing Information");
+                speak("Request Housing Information");
                 return true;
             }
         });
@@ -85,7 +87,7 @@ public class HousingActivity extends AppCompatActivity {
         RRC_Button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Rights Review Committee");
+                speak("Rights Review Committee");
                 return true;
             }
         });

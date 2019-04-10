@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import static com.knowyourrights.MainActivity.speak;
+
 public class EmploymentActivity extends AppCompatActivity {
 
     //Buttons
@@ -42,7 +44,7 @@ public class EmploymentActivity extends AppCompatActivity {
         Employability.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Employability");
+                speak("Employability");
                 return true;
             }
         });
@@ -58,7 +60,7 @@ public class EmploymentActivity extends AppCompatActivity {
         SupportedEmployability.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Supported Employment");
+                speak("Supported Employment");
                 return true;
             }
 
@@ -75,7 +77,7 @@ public class EmploymentActivity extends AppCompatActivity {
         InclusionIreland.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Inclusion Ireland");
+                speak("Inclusion Ireland");
                 return true;
             }
         });
@@ -92,7 +94,7 @@ public class EmploymentActivity extends AppCompatActivity {
         RRC.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                MainActivity.speak("Rights Review Committee");
+                speak("Rights Review Committee");
                 return true;
             }
         });

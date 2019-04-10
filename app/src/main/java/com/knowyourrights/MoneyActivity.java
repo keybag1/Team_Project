@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import static com.knowyourrights.MainActivity.speak;
+
 
 public class MoneyActivity extends AppCompatActivity {
 
@@ -55,7 +57,7 @@ public class MoneyActivity extends AppCompatActivity {
       MABsButton.setOnLongClickListener(new View.OnLongClickListener() {
           @Override
           public boolean onLongClick(View v) {
-              MainActivity.speak("Money and Budgeting Service");
+              speak("Money and Budgeting Service");
               return true;
           }
       });
@@ -72,7 +74,7 @@ public class MoneyActivity extends AppCompatActivity {
       RightsButton.setOnLongClickListener(new View.OnLongClickListener() {
           @Override
           public boolean onLongClick(View v) {
-              MainActivity.speak("Money Rights");
+              speak("Money Rights");
               return true;
           }
       });
@@ -89,7 +91,7 @@ public class MoneyActivity extends AppCompatActivity {
       InclusionIrelandButton.setOnLongClickListener(new View.OnLongClickListener() {
           @Override
           public boolean onLongClick(View v) {
-              MainActivity.speak("Inclusion Ireland");
+              speak("Inclusion Ireland");
               return true;
           }
       });
@@ -106,7 +108,7 @@ public class MoneyActivity extends AppCompatActivity {
       RightsButton.setOnLongClickListener(new View.OnLongClickListener() {
           @Override
           public boolean onLongClick(View v) {
-              MainActivity.speak("Rights Review Committee");
+              speak("Rights Review Committee");
               return true;
           }
       });
