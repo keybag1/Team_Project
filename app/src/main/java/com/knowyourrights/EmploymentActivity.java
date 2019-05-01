@@ -20,7 +20,7 @@ public class EmploymentActivity extends AppCompatActivity {
     private Button RRC;
 
     //URL Strings
-    private String welfareURL = "https://www.welfare.ie/en/Pages/EmployAbility-Service.aspx";
+    private String EmployVid = "https://www.vimeo.com/126692975";
     private String sjogWorkURL = "http://easytoread.sjog.ie/work/";
     private String InclusionIrelandURL = "http://inclusionireland.ie/";
 
@@ -38,7 +38,7 @@ public class EmploymentActivity extends AppCompatActivity {
         Employability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWebView(v, welfareURL);
+                openWebView(v, EmployVid, null, null);
             }
         });
         Employability.setOnLongClickListener(new View.OnLongClickListener() {
@@ -54,7 +54,7 @@ public class EmploymentActivity extends AppCompatActivity {
         SupportedEmployability.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWebView(v, sjogWorkURL);
+                openWebView(v, sjogWorkURL, null , null);
             }
         });
         SupportedEmployability.setOnLongClickListener(new View.OnLongClickListener() {
@@ -71,7 +71,9 @@ public class EmploymentActivity extends AppCompatActivity {
         InclusionIreland.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWebView(v, InclusionIrelandURL);
+                String addr = getString(R.string.Inclusion_Ireland_addr);
+                String msg = getString(R.string.Inclusion_Ireland_employmsg);
+                openWebView(v, InclusionIrelandURL, addr, msg);
             }
         });
         InclusionIreland.setOnLongClickListener(new View.OnLongClickListener() {
@@ -87,7 +89,9 @@ public class EmploymentActivity extends AppCompatActivity {
         RRC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String addr = getString(R.string.Rights_Review_addr);
+                String msg = getString(R.string.Rights_review_msg);
+                openMail(v, addr, msg);
             }
         });
 
@@ -116,10 +120,20 @@ public class EmploymentActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openWebView(View v, String url) {
+    public void openWebView(View v, String url, String addr, String msg) {
         Intent intent = new Intent(this, WebViewActivity.class);
         intent.putExtra("url", url);
+        intent.putExtra("addr", addr);
+        intent.putExtra("msg",msg);
         startActivity(intent);
+    }
+
+    //open Mail Class
+    public void openMail(View v, String addr, String msg){
+        Intent mailIntent = new Intent(this, EmailComplaints.class);
+        mailIntent.putExtra("addr", addr);
+        mailIntent.putExtra("msg",msg);
+        startActivity(mailIntent);
     }
 
 }

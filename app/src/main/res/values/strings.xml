@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Know Your Rights</string>
     <string name="action_settings">Settings</string>
+    <string name="Request_housing_recipient">grainne@sjog.ie</string>
+    <string name="Request_housing_msg">Hello Sir/Madam, I would like to request information about housing could you please forward it to me thank you. Kind Regards</string>
+    <string name="Rights_Review_addr">rightsreviewliffey@sjog.ie</string>
+    <string name="Rights_review_msg">Hello Sir/Madam, I would like to talk about an infringement of my rights please contact me. Thank you, Kind Regards</string>
+    <string name="Inclusion_Ireland_addr">info@inclusionireland.ie</string>
+    <string name="Inclusion_Ireland_employmsg">Hello Sir/Madam I have a question about employment please contact me. Thank you, Kind Regards</string>
+    <string name="Inclusion_Ireland_moneymsg">Hello Sir/Madam I have a question about Money please contact me. Thank you, Kind Regards</string>
+    <string name="mabs_addr">helpline@mabs.ie</string>
+    <string name="mabs_msg">Hello Sir/Madam I have a question about Money please contact me. Thank you, Kind Regards</string>
+
 </resources>

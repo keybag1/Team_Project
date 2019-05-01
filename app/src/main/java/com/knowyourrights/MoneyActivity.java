@@ -50,7 +50,9 @@ public class MoneyActivity extends AppCompatActivity {
       MABsButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-                openWebView(v, MabsURL);
+              String addr = getString(R.string.mabs_addr);
+              String msg = getString(R.string.mabs_msg);
+              openWebView(v, MabsURL, addr, msg);
           }
       });
 
@@ -67,7 +69,7 @@ public class MoneyActivity extends AppCompatActivity {
       RightsButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              openWebView(v, RightsURL);
+              openWebView(v, RightsURL, null, null);
           }
       });
 
@@ -84,7 +86,9 @@ public class MoneyActivity extends AppCompatActivity {
       InclusionIrelandButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              openWebView(v, InclusionIreland );
+              String addr = getString(R.string.Inclusion_Ireland_addr);
+              String msg = getString(R.string.Inclusion_Ireland_moneymsg);
+              openWebView(v, InclusionIreland, addr, msg );
           }
       });
 
@@ -101,7 +105,9 @@ public class MoneyActivity extends AppCompatActivity {
       RightsButton.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-
+                String addr = getString(R.string.Rights_Review_addr);
+                String msg = getString(R.string.Rights_review_msg);
+                openMail(v, addr, msg);
           }
       });
 
@@ -121,9 +127,20 @@ public class MoneyActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
-  public void openWebView(View v, String url){
+  public void openWebView(View v, String url, String addr, String msg){
       Intent intent = new Intent(this, WebViewActivity.class);
       intent.putExtra("url",url);
+      intent.putExtra("addr", addr);
+      intent.putExtra("msg",msg);
       startActivity(intent);
   }
+
+    //open Mail Class
+    public void openMail(View v, String addr, String msg){
+        Intent mailIntent = new Intent(this, EmailComplaints.class);
+        mailIntent.putExtra("addr", addr);
+        mailIntent.putExtra("msg",msg);
+        startActivity(mailIntent);
+    }
+
 }

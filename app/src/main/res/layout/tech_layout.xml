@@ -53,7 +53,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
                 app:layout_constraintBottom_toTopOf="@+id/TopLeft"
                 tools:layout_editor_absoluteX="0dp"
-                tools:text="Communication" />
+                tools:text="Assistive Technology" />
         </LinearLayout>
 
         <Button
@@ -66,7 +66,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_blue_bright"
-            android:text="Citizen    Information"
+            android:text="Speech To Text"
             app:layout_constraintBottom_toTopOf="@+id/BottomRight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/TopLeft"
@@ -82,7 +82,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="32dp"
             android:background="@android:color/holo_blue_bright"
-            android:text="Assistive Technology"
+            android:text="Claro Scan Pen"
             app:layout_anchor="@+id/Communication"
             app:layout_anchorGravity="bottom|center"
             app:layout_constraintBottom_toTopOf="@+id/BottomLeft"
@@ -95,7 +95,7 @@
             android:layout_width="30dp"
             android:layout_height="29dp"
             android:layout_gravity="center"
-            android:layout_marginEnd="110dp"
+            android:layout_marginEnd="132dp"
             android:layout_marginBottom="24dp"
             android:layout_weight="1"
             app:layout_constraintBottom_toTopOf="@+id/TopLeft"
@@ -111,7 +111,7 @@
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="108dp"
             android:background="@android:color/holo_blue_bright"
-            android:text="Complaints"
+            android:text="Breakdown of Text To Speech"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/BottomRight"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +126,7 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="108dp"
             android:background="@android:color/holo_blue_bright"
-            android:text="Rights Review Committee"
+            android:text="Switch Access"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/BottomLeft"

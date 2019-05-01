@@ -26,6 +26,8 @@
         <activity android:name=".HousingActivity" android:screenOrientation="portrait"/>
         <activity android:name=".CommunicationActivity" android:screenOrientation="portrait"/>
         <activity android:name=".EmploymentActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".TechActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".EmailComplaints" android:screenOrientation="portrait"/>
         <activity android:name=".WebViewActivity"/>
     </application>
 
